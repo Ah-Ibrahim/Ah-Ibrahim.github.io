@@ -1,0 +1,240 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url("../assets/fonts/League_Spartan/static/LeagueSpartan-Medium.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url("../assets/fonts/League_Spartan/static/LeagueSpartan-SemiBold.ttf");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url("../assets/fonts/League_Spartan/static/LeagueSpartan-Bold.ttf");
+    font-weight: bold;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta:hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    font: 15px 'League Spartan', sans-serif;
+}
+
+main {
+    background: url("../images/bg-pattern-top-desktop.svg") no-repeat, url("../images/bg-pattern-bottom-desktop.svg") no-repeat right bottom;
+    display: flex;
+    flex-direction: column;
+    padding: 7.5rem 11rem 7rem;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .heading {
+    flex: 0.4;
+}
+
+.container .rating {
+    flex: 0.49;
+}
+
+.container .heading h1 {
+    color: var(--dark-magenta);
+    font-size: 3.43rem;
+    line-height: 0.95;
+    margin-bottom: 2rem;
+}
+
+.container .heading__text {
+    font-size:  1.2rem;
+    line-height: 1.4;
+    color: var(--dark-grayish-magenta);
+}
+
+.rating {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.rating .rating__item {
+    background-color: var(--light-grayish-magenta);
+    color: var(--dark-magenta);
+    display: flex;
+    padding: 1.25rem 2.25rem;
+    border-radius: 5px;
+    width: 82%;
+    font-weight: 600;
+    font-size: 1.15rem;
+    align-items: center;
+}
+
+.rating .rating__item:first-child {
+    align-self: start;
+}
+
+.rating .rating__item:last-child {
+    align-self: end;
+}
+
+.rating .rating__item .stars {
+    display: flex;
+    gap: 0.5rem;
+    margin-right: 2rem;
+}
+
+.reviews {
+    display: flex;
+    gap: 2rem;
+    margin-top: 4rem;
+    color: var(--white);
+    align-items: start;
+}
+
+.reviews .review-item {
+    flex: 1;
+    background-color: var(--dark-magenta);
+    border-radius: 0.5rem;
+    padding: 2.5rem 2rem;
+}
+
+.reviews .review-item:nth-child(2) {
+    margin-top: 1rem;
+}
+
+.reviews .review-item:nth-child(3) {
+    margin-top: 2rem;
+}
+
+.reviews .review-item__title {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-areas: 
+    "image name"
+    "image tag";
+    column-gap: 1.5rem;
+    margin-bottom: 1.75rem;
+    font-size: 1.15rem;
+}
+
+
+.reviews .review-item__title img {
+    grid-area: image;
+    width: 40px;
+}
+
+.reviews .review-item__title .buyer-name {
+    grid-area: name;
+    font-weight: bold;
+}
+
+.reviews .review-item__title .buyer-tag {
+    grid-area: tag;
+    color: var(--soft-pink);
+}
+
+.reviews .review-item__title img {
+    border-radius: 50%;
+}
+
+.reviews .review-item__text {
+    font-size: 1.1rem;
+    line-height: 1.35;
+}
+
+.reviews .review-item__text::before{
+    content: open-quote;
+}
+
+.reviews .review-item__text::after {
+    content:close-quote;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: var(--soft-pink);
+}
+
+@media screen and (max-width: 376px) {
+    main {
+        padding: 5.5rem 1.5rem;
+    }
+
+    .container {
+        text-align: center;
+        display: block;
+    }
+
+    .container .heading h1 {
+        font-size: 2.5rem;
+        line-height: 0.85;
+        margin-bottom: 1.5rem;
+    }
+
+    .container .heading {
+        flex: 1;
+    }
+    
+    .container .rating {
+        flex: 1;
+    }
+
+    .rating {
+        width: 100%;
+        padding: 2.5rem 0;
+    }
+
+    .rating .rating__item {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1rem;
+    }
+
+    .rating .rating__item .stars {
+        margin-right: 0;
+        margin-bottom: 0.75rem;  
+    }
+
+    .reviews {
+        flex-direction: column;
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+    .reviews :is(.review-item:nth-child(2), .review-item:nth-child(3)) {
+        margin: 0;
+    }
+
+    .reviews .review-item {
+        padding-bottom: 2rem;
+    }
+}

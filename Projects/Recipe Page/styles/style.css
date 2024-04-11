@@ -1,0 +1,146 @@
+@font-face {
+    font-family: "Outfit";
+    src: url("../assets/fonts/outfit/static/Outfit-Medium.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Outfit";
+    src: url("../assets/fonts/outfit/static/Outfit-Light.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Young Serif";
+    src: url("../assets/fonts/young-serif/YoungSerif-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --back-color: #f3e5d8;
+    --card-back-color: #fff7fc;
+    --card-color: #5f243e;
+    --accent-color: #804730;
+}
+
+html {
+    font-family: "Outfit";
+    color: gray;
+}
+
+body {
+    background-color: var(--back-color);
+    display: grid;
+    place-content: center;
+    grid-template-columns: 0.5fr;
+    position: relative;
+}
+
+main {
+    background-color: #fff;
+    padding: 2.5em;
+    margin: 8rem 0;
+    border-radius: 1.2em;
+}
+
+main img {
+    width: 100%;
+    border-radius: 1em;
+}
+
+main h1 {
+    font: 2.5rem "Young Serif";
+    color: black;
+    margin: 1.5rem 0 1rem;
+}
+
+main p.description {
+    margin: 1rem 0;
+    line-height: 1.4;
+}
+
+main .card {
+    background-color: var(--card-back-color);
+    padding: 1.2em;
+    border-radius: 0.6em;
+    margin: 2rem 0;
+}
+
+main .card h3 {
+    color: var(--card-color);
+}
+
+main :is(ul, ol) {
+    padding: 0 1em; 
+}
+
+main li {
+    padding: 0.5em 1em;
+}
+
+main .card li::marker {
+    color: var(--card-color);
+}
+
+main ul li::marker {
+    font-size: 0.7em;
+}
+
+main h2 {
+    color: var(--accent-color);
+    font: 1.7rem "Young Serif";
+    margin: 1.5rem 0;
+}
+
+main section:nth-child(n + 2) {
+    margin-top: 1.5rem;
+    border-top: 1px solid rgba(153, 153, 153, 0.252);
+}
+
+main section li::marker {
+    color: var(--accent-color);
+}
+
+main .Nutrition-table__row {
+    display: flex;
+    padding: 1em;
+}
+
+main .Nutrition-table__row:nth-child(n + 2) {
+    border-top: 1px solid rgba(153, 153, 153, 0.252); 
+}
+
+main .Nutrition-table__row > * {
+    flex: 1 1 0;
+}
+
+main .Nutrition-table__row .table-data {
+    color: var(--accent-color);
+}
+
+.attribution {
+    position: absolute;
+    bottom: 2em;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    main img {
+        border-radius: 0;
+    }
+}

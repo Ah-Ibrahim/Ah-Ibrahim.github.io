@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --accent-color: #883AE1;
+    --back-color: #fff;
+    --font-gray-color: #6C727F;
+}
+
+html {
+    font-family: 'Sora', sans-serif;
+}
+
+main {
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    background-color: #FAFAF9;
+    grid-template-columns: minmax(350px, 0.3fr);
+}
+
+.card {
+    box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.1);
+    border-radius: 1.2rem;
+}
+
+.card__item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9em;
+    padding: 1em;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 0.8rem;
+}
+
+.card h2 {
+    font-weight: 600;
+}
+
+.card .tag {
+    color: var(--accent-color);
+    background-color: #E6D6FC;
+    border-radius: 1em;
+    width: max-content;
+    font-size: 0.7rem;
+    padding: 0.3em 1.2em;
+    font-weight: 600;
+}
+
+.card :is(p, .author) {
+    color: var(--font-gray-color, gray);
+    font-weight: 300;
+}
+
+.card .author {
+    margin: 0.25em 0;
+}
+
+.card .horizontal-line {
+    background-color: #9c9c9c8e;
+    height: 1px;
+}

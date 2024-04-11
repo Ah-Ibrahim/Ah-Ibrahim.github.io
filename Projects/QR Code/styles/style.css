@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Sora', sans-serif;
+}
+
+main {
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    background-color: #d9e7ff;
+}
+
+main .card {
+    background-color: #fff;
+    box-shadow: 0 0 25px 2px rgba(0, 0, 0, 0.176);
+    border-radius: 15px;
+    width: 360px;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+}
+
+main .card img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 7px;
+}
+
+main .card p {
+    font-weight: 300;
+    color: gray;
+    margin-bottom: 0.75em;
+}
+
+main .attribution {
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translate(-50%);
+}

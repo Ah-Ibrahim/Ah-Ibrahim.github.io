@@ -1,0 +1,161 @@
+@font-face {
+    font-family: 'Outfit';
+    src: url("../assets/fonts/Outfit/Outfit-VariableFont_wght.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+:root {
+    --soft-blue: hsl(215, 51%, 70%);
+    --cyan: hsl(178, 100%, 50%);
+    --back-very-dark-blue: hsl(217, 54%, 11%);
+    --card-very-dark-blue: hsl(216, 50%, 16%);
+    --line-very-dark-blue:hsl(215, 32%, 27%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    font: 300 18px 'Outfit', sans-serif;
+}
+
+main {
+    background-color: var(--back-very-dark-blue);
+    display: grid;
+    grid-template-columns: 350px;
+    place-content: center;
+    padding: 8.5rem 0;
+    position: relative;
+    min-height: 100vh;
+}
+
+main .card {
+    background-color: var(--card-very-dark-blue);
+    box-shadow: 0 15px 15px 5px rgba(0, 0, 0, 0.25);
+    padding: 1.3rem;
+    border-radius: 0.7rem;
+}
+
+main .card a {
+    text-decoration: none;
+}
+
+main .card a:hover {
+    color: var(--cyan);
+}
+
+main .card__img {
+    width: 100%;
+    border-radius: 0.6rem;
+}
+
+main .card__heading {
+    display: block;
+    color: var(--white);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1rem 0 0.9rem;
+}
+
+main .card__heading .id {
+    letter-spacing: -0.03rem;
+}
+
+main .card__description {
+    
+    line-height: 1.4;
+    color: var(--soft-blue);
+}
+
+main .card__info {
+    display: flex;
+    justify-content: space-between;
+    margin: 1.35rem 0;
+    font-size: 0.915rem;
+}
+
+main .card__info :is(.cost, .time) {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+main .card__info .cost {
+    color: var(--cyan);
+    font-weight: 400;
+}
+
+main .card__info .time {
+    color: var(--soft-blue);
+    letter-spacing: -0.01rem;
+    margin-right: 0.1rem;
+}
+
+main .card__credits {
+    border-top: 1px solid var(--line-very-dark-blue);
+}
+
+main .card__credits img {
+    border-radius: 50%;
+    border: 1px solid var(--white);
+    width: 35px;
+}
+
+main .card__credits {
+    color: var(--soft-blue);
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0 0.4rem;
+    gap: 0.8rem;
+    font-size: 0.9rem;
+}
+
+main .card__credits .author {
+    color: var(--white);
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center;
+    color: var(--white);
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.attribution a { 
+    color: var(--cyan); 
+}
+
+@media screen and (max-width: 376px) {
+    main {
+        padding: 3.5rem 1.4rem;
+        grid-template-columns: 1fr;
+    }
+
+    main .card__heading {
+        margin: 1.1rem 0 0.6rem;
+    }
+
+    main .card__description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    main .card__info {
+        margin: 0.8rem 0 0.9rem;
+    }
+
+    main .card__info :is(.cost, .time) {
+        letter-spacing: -0.03rem;
+    }
+
+    main .card__credits {
+        letter-spacing: -0.03rem;
+    }
+}

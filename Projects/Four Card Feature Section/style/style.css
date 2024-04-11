@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins/Poppins-Light.ttf");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins/Poppins-Medium.ttf");
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../assets/fonts/Poppins/Poppins-Bold.ttf");
+    font-weight: 600;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --back-color: hsl(0, 0%, 98%);
+    --card-back-color: #ffffff;
+    --font-dark-blue-color: hsl(234, 12%, 34%);
+    --font-grayish-blue-color: hsl(229, 6%, 66%);
+    --red-border: hsl(0, 78%, 62%);
+    --cyan-border: hsl(180, 62%, 55%);
+    --orange-border: hsl(34, 97%, 64%);
+    --blue-border: hsl(212, 86%, 64%);
+    --gap: 2rem;
+}
+
+html {
+    font: 15px "Poppins";
+    color: var(--font-grayish-blue-color);
+}
+
+body {
+    background-color: var(--back-color);
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    padding: 5rem 11rem 1rem;
+}
+
+main h1 {
+    text-align: center;
+    font-weight: 200;
+    font-size: 2.4rem;
+}
+
+main h1 strong {
+    font-weight: 600;
+}
+
+main :is(h1, h2) {
+    color: var(--font-dark-blue-color);
+}
+
+.description {
+    text-align: center;
+    width: 50%;
+    margin: 1rem auto;
+}
+
+.container {
+    flex-grow: 1;
+    display: flex;
+    margin: 3.5rem 0;
+    gap: var(--gap);
+    align-items: center;
+}
+
+.container__item {
+    flex: 1 0 0;
+}
+
+.card {
+    background-color: var(--card-back-color);
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.103);
+    border-radius: 0.5em;
+    border-top: 4px solid currentColor;
+    padding: 2em;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card__img-container {
+    margin-top: auto;
+    text-align: right;
+}
+
+.container__item:first-child .card {
+    border-color: var(--cyan-border);
+}
+
+.container__item:nth-child(2) .card:first-child {
+    border-color: var(--red-border);
+}
+
+.container__item:nth-child(2) .card:last-child {
+    border-color: var(--orange-border);
+}
+
+.container__item:last-child .card {
+    border-color: var(--blue-border);
+}
+
+.container__item:nth-child(2) {
+    display: flex;
+    flex-flow: column;
+    gap: var(--gap);
+}
+
+footer {
+    padding: 1.5em 0;
+}
+
+@media screen and (max-width: 376px) {
+    :root {
+        --gap: 1.6rem;
+    }
+    
+    main {
+        padding: 5.7rem 2rem 1rem;
+    }
+
+    main h1 {
+        font-size: 1.6rem;
+    }
+
+    main .description {
+        width: 100%;
+        line-height: 1.7;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    .card {
+        min-height: 225px;
+        padding: 1.5em 2em;
+    }
+
+
+    .card__description {
+        font-size: 14px;
+    }
+}
