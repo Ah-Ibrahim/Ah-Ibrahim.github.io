@@ -107,10 +107,6 @@ header nav a.contact-link:hover {
     position: relative;
 }
 
-.hero-container .exclamation-mark {
-    color: var(--ash-gray);
-}
-
 .hero-container .hero-intro {
     font-size: 1.5rem;
 }
@@ -298,6 +294,6 @@ footer a:hover {
     }
 
     60%, 100% {
-        transform: translateX(4.5ch);
+        transform: translateX(6ch);
     }
 }
