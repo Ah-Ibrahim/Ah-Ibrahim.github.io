@@ -1,109 +1,19 @@
-.poppins-thin {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: normal;
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Medium.ttf);
+    font-weight: normal;
 }
 
-.poppins-thin-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 100;
-    font-style: italic;
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+    font-weight: bold;
 }
 
-.poppins-extralight {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
-    font-style: normal;
-}
-
-.poppins-extralight-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 200;
-    font-style: italic;
-}
-
-.poppins-light {
-    font-family: "Poppins", sans-serif;
+@font-face {
+    font-family: "Poppins";
+    src: url(../assets/fonts/Poppins/Poppins-Light.ttf);
     font-weight: 300;
-    font-style: normal;
-}
-
-.poppins-light-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 300;
-    font-style: italic;
-}
-
-.poppins-regular {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.poppins-regular-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 400;
-    font-style: italic;
-}
-
-.poppins-medium {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: normal;
-}
-
-.poppins-medium-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-style: italic;
-}
-
-.poppins-semibold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: normal;
-}
-
-.poppins-semibold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-style: italic;
-}
-
-.poppins-bold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: normal;
-}
-
-.poppins-bold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 700;
-    font-style: italic;
-}
-
-.poppins-extrabold {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: normal;
-}
-
-.poppins-extrabold-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 800;
-    font-style: italic;
-}
-
-.poppins-black {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-}
-
-.poppins-black-italic {
-    font-family: "Poppins", sans-serif;
-    font-weight: 900;
-    font-style: italic;
 }
 
 * {
@@ -140,8 +50,11 @@ header {
 }
 
 header .logo {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    color: var(--black);
+    text-decoration: none;
 }
+
 
 .logo-accent {
     color: var(--ash-gray);
@@ -182,6 +95,7 @@ header nav a.contact-link:hover {
 .hero-container {
     display: flex;
     padding: 4rem var(--side-padding);
+    align-items: center;
 }
 
 .hero-container>* {
@@ -195,6 +109,10 @@ header nav a.contact-link:hover {
 
 .hero-container .exclamation-mark {
     color: var(--ash-gray);
+}
+
+.hero-container .hero-intro {
+    font-size: 1.5rem;
 }
 
 .hero-container__start .hello {
@@ -233,9 +151,6 @@ header nav a.contact-link:hover {
     font-size: 1.1rem;
 }
 
-.hero-container__end {
-    align-self: center;
-}
 
 .hero-container__end img {
     width: 100%;
@@ -257,12 +172,12 @@ header nav a.contact-link:hover {
 
 .main-section__text {
     font-size: 1.1rem;
-    border-left: 10px solid var(--rose);
-    padding: 0 1em;
+    border-left: 10px solid var(--ash-gray);
+    padding: 1em;
 }
 
 .main-section .dot {
-    color: var(--rose);
+    color: var(--ash-gray);
 }
 
 .main-section__features {
@@ -291,12 +206,12 @@ header nav a.contact-link:hover {
     bottom: 5%;
     right: 2%;
     padding: 0.75em 1em;
-    color: var(--rose);
+    color: var(--blue);
     transition: all 0.5s;
 }
 
 .skip-button:hover, .skip-button:focus-visible {
-    background-color: var(--rose);
+    background-color: var(--blue);
     color: white;
     outline: none;
 }
@@ -317,20 +232,14 @@ header nav a.contact-link:hover {
     width: 80%;
 }
 
-.main-section .gallery__item:nth-child(even) {
-    position: relative;
-    border: 2px dashed var(--azure);
+.main-section .gallery__item:nth-child(3n+1) {
+    border-right: 2px dashed var(--azure);
 }
 
-/* .main-section .gallery__item:nth-child(odd) .heading::after {
-    content: "";
-    position: absolute;
-    left: 10%;
-    right: 10%;
-    top: 0;
-    height: 5px;
-    background: linear-gradient(90deg, rgba(172, 189, 186, 1) 0%, rgba(205, 221, 221, 1) 20%, rgba(165, 153, 181, 1) 47%, rgba(51, 101, 138, 1) 77%, rgba(31, 42, 50, 1) 95%);
-} */
+
+.main-section .gallery__item:nth-child(3n+3) {
+    border-left: 2px dashed var(--azure);
+}
 
 footer {
     margin-top: 5rem;
