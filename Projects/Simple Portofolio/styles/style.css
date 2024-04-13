@@ -36,6 +36,7 @@ html {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
     color: var(--black);
+    scroll-behavior: smooth;
 }
 
 body {
@@ -176,6 +177,10 @@ header nav a.contact-link:hover {
     color: var(--ash-gray);
 }
 
+.main-section .dot--blue {
+    color: var(--blue);
+}
+
 .main-section__features {
     display: flex;
     margin: 3rem 0;
@@ -184,6 +189,20 @@ header nav a.contact-link:hover {
 .main-section__features>* {
     flex: 1 0 0;
     text-align: center;
+}
+
+.main-section__features-item {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.main-section__features-item a {
+    color: blue;
+}
+
+.main-section__features-item svg {
+    width: 30%;
 }
 
 .main-section .heading {
@@ -235,6 +254,75 @@ header nav a.contact-link:hover {
 
 .main-section .gallery__item:nth-child(3n+3) {
     border-left: 2px dashed var(--azure);
+}
+
+.main-section .contact-form {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    row-gap: 1rem;
+    align-items: center;
+}
+
+.main-section .contact-form__item {
+    width: 75%;
+}
+
+.main-section .contact-form #user-message {
+    height: 300px;
+    resize: none;
+}
+
+.main-section .contact-form input, #user-message {
+    width: 100%;
+    border: 2px solid var(--ash-gray);
+    border-radius: 20px;
+    padding: 1em;
+}
+
+.main-section .contact-form input::placeholder, #user-message::placeholder {
+    color: var(--black);
+    opacity: 0.7;
+    font-family: "Poppins";
+    font-size: 0.9rem;
+}
+
+.main-section .contact-form input:focus, #user-message:focus {
+    outline: none;
+    border-color: var(--blue);
+}
+
+.main-section .contact-form #contact-submit {
+    padding: 1em 4em;
+    border: none;
+    border-radius: 20px;
+    font-family: "Poppins";
+    background-color: var(--azure);
+    outline: none;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+.main-section .contact-form #contact-submit:hover {
+    background-color: var(--blue);
+    color: white;
+}
+
+.contant-links-area {
+    display: grid;
+    grid-template-columns: minmax(14%, 15%);
+    place-content: center;
+    gap: 2rem;
+}
+
+
+.contact-link svg {
+    width: 100%;
+    fill: var(--black);
+}
+
+.contact-link:hover svg {
+    fill: var(--blue);
 }
 
 footer {
