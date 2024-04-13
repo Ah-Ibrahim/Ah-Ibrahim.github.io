@@ -319,6 +319,7 @@ header nav a.contact-link:hover {
 .contact-link svg {
     width: 100%;
     fill: var(--black);
+    transition: all 0.5s;
 }
 
 .contact-link:hover svg {
