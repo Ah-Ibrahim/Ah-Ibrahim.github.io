@@ -1,3 +1,5 @@
-# Four card feature section solution
+# Huddle landing page
 
-Live Perview [Four card feature section challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/four-card-feature-section-weK1eFYK).
+![Design preview for the Huddle landing page with single introductory section](./design/desktop-preview.jpg)
+
+Live Perview: [On my website](https://ah-ibrahim.github.io/Projects/huddle-landing-page-with-single-introductory-section-master/).
