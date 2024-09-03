@@ -113,7 +113,7 @@ header nav a.contact-link:hover {
 }
 
 .hero-container__start .hello {
-    --writing-animation: writing 8s ease infinite alternate;
+    --writing-animation: writing 8s ease 0.5s infinite alternate;
 }
 
 .hero-container__start .hello::after {
@@ -124,7 +124,7 @@ header nav a.contact-link:hover {
     left: 0;
     width: 3px;
     background-color: var(--ash-gray);
-    animation: blinking 1.3s ease infinite, var(--writing-animation);
+    animation: blinking 1.3s ease 0.5s infinite, var(--writing-animation);
 }
 
 .hero-container__start .hello::before {
@@ -359,7 +359,7 @@ footer a:hover {
 
 @keyframes writing {
     0% {
-        transform: translateX(0);
+        transform: none;
     }
 
     10% {

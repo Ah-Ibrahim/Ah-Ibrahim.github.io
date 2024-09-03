@@ -1,0 +1,206 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Italic.ttf');
+    font-style: italic;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-Bold.ttf');
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('../assets/fonts/Poppins-ExtraBoldItalic.ttf');
+    font-weight: 800;
+    font-style: italic;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --purple: hsl(259, 100%, 65%);
+    --light-red: hsl(0, 100%, 67%);
+
+    --white: hsl(0, 0%, 100%);
+    --off-white: hsl(0, 0%, 94%);
+    --light-grey: hsl(0, 0%, 94%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --off-black: hsl(0, 0%, 8%);
+}
+
+body {
+    padding: 10.5rem 0;
+    background-color: var(--off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.container {
+    background-color: var(--white);
+    width: 59vw;
+    padding: 3.5rem;
+    border-radius: 20px 20px 200px 20px;
+    gap: 2rem;
+}
+
+.inputs {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 3px solid var(--light-grey);
+    padding-bottom: 3rem;
+    width: 90%;
+    position: relative;
+}
+
+.inputs__component {
+    flex-basis: 0;
+    flex-grow: 0.27;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.inputs__component::before {
+    content: attr(data-date);
+    color: var(--smokey-grey);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.inputs__component::after {
+    /* content: 'Must be a valid day'; */
+    font-style: italic;
+    font-weight: 400;
+}
+
+.inputs__component input {
+    outline: none;
+    color: var(--off-black);
+    border: 3px solid var(--light-grey);
+    font-size: 32px;
+    font-weight: bold;
+    padding: 0.5em 0.7em;
+    width: 100%;
+    border-radius: 5px;
+    caret-color: var(--purple);
+    cursor: pointer;
+}
+
+.inputs__component input::placeholder {
+    color: var(--smokey-grey);
+}
+
+.inputs__component input:focus {
+    border-color: var(--purple);
+}
+
+.inputs__component .error {
+    border-color: var(--light-red);
+}
+
+
+.inputs__component:has(.error)::before, .inputs__component:has(.error)::after {
+    color: var(--light-red);
+}
+
+.inputs__component:has(.error--empty)::after {
+    content: 'This field is required';
+}
+
+.inputs__component:has(.error--invalid)::after {
+    content: 'Must be a valid 'attr(data-date);
+}
+
+.btn {
+    background-color: var(--purple);
+    border-radius: 50%;
+    padding: 1.5rem;
+    border: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(70%, 50%);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--off-black);
+}
+
+.btn:active {
+    transform: translate(70%, 50%) scale(0.8);
+}
+
+.container__output {
+    padding: 2.5rem 0 0;
+    line-height: 7.25rem;
+    font-size: 6.5rem;
+    font-style: italic;
+    font-weight: 800;
+}
+
+.container__output .output {
+    color: var(--purple);
+}
+
+@media (max-width: 400px) {
+    body {
+        padding-top: 5.5rem;
+    }
+
+    .container {
+        width: 90vw;
+        padding: 1.25rem 1.25rem 3rem;
+        border-bottom-right-radius: 100px;
+    }
+
+    .inputs {
+        width: 100%;
+        padding: 1.75rem 0 4.25rem;
+        gap: 1rem;
+    }
+
+    .inputs__component {
+        flex-grow: 1;
+    }
+
+    .inputs__component::before, .inputs__component::after {
+        font-size: 0.75rem;
+        letter-spacing: 3px;
+    }
+
+    .inputs__component input {
+        font-size: 1.25rem;
+    }
+
+    .btn {
+        left: 50%;
+        width: fit-content;
+        transform: translate(-50%, 50%);
+        padding: 1.25rem;
+    }
+
+    .btn img {
+        width: 25px;
+        /* aspect-ratio: 3 / 2; */
+    }
+
+    .container__output {
+        padding-top: 4rem;
+        font-size: 3.5rem;
+        line-height: 3.75rem;
+        white-space: nowrap;
+    }
+}
